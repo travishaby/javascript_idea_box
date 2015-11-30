@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+  flex: 1 0 auto;
+}
+
+th {
+  :hover {
+    color: $primary-color;
+  }
+}
+
+.large-break {
+  padding-top: 100px;
+}
+
+.medium-break {
+  padding-top: 50px;
+}
+
+.small-break {
+  padding-top: 20px;
+}
+
+.site-color {
+  background-color: $primary-color;
+}
+
+.flash-danger {
+  background-color: color("red", "lighten-2");
+}
+
+* { font-family: Avenir; }
+
+$gold-text-color: #f0ca4d;
+$red-text-color: #e15a49;
+
+.highlight-color {
+  color: $gold-text-color;
+}
+
+.red-text-color {
+  color: $red-text-color;
+}
+
+.highlight-background {
+  background-color: $gold-text-color;
+}
+
+.text-color {
+  color: #454d52;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.obese-container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#footer {
+  padding-bottom: 20px;
+}
+
+#left_padding {
+  padding-left: 25px;
+}
