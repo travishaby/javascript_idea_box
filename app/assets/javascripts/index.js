@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function allIdeas(){
   $.getJSON('/api/v1/ideas')
     .then(function(ideas){
       ideas = ideas.sort(function(a, b){
@@ -13,4 +13,4 @@ $(document).ready(function(){
       });
     })
     .fail(function(){ console.log("api request failed") });
-});
+};
