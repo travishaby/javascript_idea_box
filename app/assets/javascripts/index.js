@@ -6,11 +6,17 @@ function allIdeas(){
       });
 
       ideas.forEach(function(idea){
-      $("#ideas-list").append('<div class="col m8"><h3>' +
-                              idea.title + ' (' + idea.quality + ')' +
-                              '</h3><h4 class="truncate">' +
-                              idea.body + '</h4></div>')
-      });
+        renderIdea(idea);
+      })
     })
     .fail(function(){ console.log("api request failed") });
+};
+
+function renderIdea(idea){
+  $("#ideas-list").prepend('<div class="col m8 idea" id="'
+                          + idea.id + '"><h3>'
+                          + idea.title + ' ('
+                          + idea.quality + ')'
+                          + '</h3><h4 class="truncate">'
+                          + idea.body + '</h4></div>');
 };
