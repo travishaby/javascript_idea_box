@@ -18,5 +18,7 @@ function renderIdea(idea){
                           + idea.title + ' ('
                           + idea.quality + ')'
                           + '</h3><h4 class="truncate">'
-                          + idea.body + '</h4></div>');
+                          + idea.body
+                          + '</h4><button class="btn" id="delete-'
+                          + idea.id + '">Delete</div>');
 };
