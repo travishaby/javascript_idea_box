@@ -1,6 +1,17 @@
-<div class="site-color center title">
-  <h1>Box of Ideas</h1>
+<div class="site-color center">
+  <h1 class="title">Box of Ideas</h1>
 
+  <div class="container col m4 well" id="new-idea">
+    <%= form_for :idea, url: "" do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, id: "new-title" %>
+    <%= f.label :body %>
+    <%= f.text_field :body, id: "new-body" %>
+    <% end %>
+    <button class="btn" id="save-button">
+      Save
+    </button>
+  </div>
   <div class="container" id="ideas-list">
 
   </div>
