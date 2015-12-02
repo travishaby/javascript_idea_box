@@ -20,8 +20,16 @@ function renderIdea(idea){
                           + idea.quality + ')'
                           + '</h3><h5>'
                           + truncateBody(idea.body, 100)
+                          + '<div class="row">'
                           + '</h5><button class="btn" id="delete-'
-                          + idea.id + '">Delete</button></div>');
+                          + idea.id + '">Delete</button>'
+                          + '<button class="btn side-space up-button">'
+                          + '<i class="material-icons">thumb_up</i>'
+                          + '</button>'
+                          + '<button class="btn side-space down-button">'
+                          + '<i class="col material-icons">thumb_down</i></div>'
+                          + '</button>'
+                          + '</div>');
 };
 
 function truncateBody(body, maxLength){
