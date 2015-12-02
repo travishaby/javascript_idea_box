@@ -8,22 +8,6 @@ main {
   flex: 1 0 auto;
 }
 
-.truncate {
-  width: 100ch;
-}
-
-.large-break {
-  padding-top: 100px;
-}
-
-.medium-break {
-  padding-top: 50px;
-}
-
-.small-break {
-  padding-top: 20px;
-}
-
 .site-color {
   background-color: $primary-color;
 }
@@ -60,8 +44,4 @@ $red-text-color: #e15a49;
 
 #footer {
   padding-bottom: 20px;
-}
-
-#left_padding {
-  padding-left: 25px;
 }

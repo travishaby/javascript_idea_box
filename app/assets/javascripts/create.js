@@ -1,5 +1,4 @@
 function createIdea(){
-
   $("#save-button").on('click', function(){
     var ideaTitle = $('#new-title').val();
     var ideaBody = $('#new-body').val();
@@ -25,6 +24,5 @@ function createIdea(){
         console.log(error.responseText)
       }
     });
-
   });
 };
