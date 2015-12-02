@@ -19,7 +19,7 @@ class Api::V1::IdeasController < ApplicationController
     if idea.update_quality(idea_params)
       render json: idea, status: 200, location: api_v1_ideas_url
     else
-      render json: "FUCK OFF", status: 400, location: api_v1_ideas_url
+      render json: "I just can't even", status: 400, location: api_v1_ideas_url
     end
   end
 
