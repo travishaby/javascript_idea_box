@@ -1,5 +1,5 @@
 function deleteIdea(){
-  $("[id^='delete-']").on('click', function(){
+  $("#wrapper").on('click', "[id^='delete-']", function(){
     var ideaDeleteButton = $(this);
     var ideaId = ideaDeleteButton.attr("id").substr(7, 8)
     $.ajax({
@@ -16,5 +16,5 @@ function deleteIdea(){
 };
 
 function removeIdea(deleteButton){
-  deleteButton.parent().remove();
+  deleteButton.parent().parent().remove();
 };
