@@ -31,7 +31,7 @@ RSpec.describe Api::V1::IdeasController, type: :controller do
       post :create, format: :json, idea: new_idea
       new_idea = Idea.find_by(title: "new title")
 
-      assert_response :error
+      assert_response 400
       expect(new_idea).to_not be
     end
   end
