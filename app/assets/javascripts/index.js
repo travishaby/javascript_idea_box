@@ -4,32 +4,42 @@ function allIdeas(){
       ideas = ideas.sort(function(a, b){
         a.updated_at > b.updated_at
       }).reverse();
-
       ideas.forEach(function(idea){
         renderIdea(idea);
       })
-      deleteIdea(); //this is here because it wasnt triggering in idea_box.js
-      changeQuality();
     })
     .fail(function(){ console.log("api request failed") });
 };
 
 function renderIdea(idea){
+  var ideaId = idea.id
+  var editForm =
+      '<form class="hide" id="edit-form-' + ideaId + '">'
+      + '<label for="idea_title">Title</label>'
+      + '<input type="text" name="idea[title]" id="update-title' + ideaId + '">'
+      + '<label for="idea_body">Body</label>'
+      + '<input type="text" name="idea[body]" id="update-body' + ideaId + '">'
+      + '<button class="btn" id="update-button-' + ideaId + '">Update</button>'
+    + '</form>'
+
   $("#ideas-list").prepend('<div class="col m8 idea" id="'
-                          + idea.id + '"><h3>'
-                          + idea.title + '</h3><h4> ('
+                          + ideaId + '"><h3>'
+                          + idea.title + '</h3><h5> ('
                           + idea.quality
-                          + ')</h4><h5>'
+                          + ')</h5><h5>'
                           + truncateBody(idea.body, 100)
-                          + '<div class="row">'
-                          + '</h5><button class="btn" id="delete-'
-                          + idea.id + '">Delete</button>'
+                          + '</h5><div class="row">'
+                          + '<button class="btn" id="delete-'
+                          + ideaId + '">Delete</button>'
+                          + '<button class="btn" id="edit-'
+                          + ideaId + '">Edit</button>'
                           + '<button class="btn side-space up-button">'
                           + '<i class="material-icons">thumb_up</i>'
                           + '</button>'
                           + '<button class="btn side-space down-button">'
                           + '<i class="col material-icons">thumb_down</i></div>'
                           + '</button>'
+                          + editForm
                           + '</div>');
 };
 
