@@ -1,7 +1,17 @@
 <div class="site-color center">
   <h1 class="title">Box of Ideas</h1>
 
+
   <div class="container col m4 well" id="new-idea">
+    <form id="ideas-search" action="" class="styled" method="post">
+      <fieldset>
+        <label for="search" class=""><h5>Search Ideas</h5></label>
+        <input type="text" class="text-input" id="filter" value="" />
+        <span id="filter-count"></span>
+      </fieldset>
+    </form>
+    <br>
+    <label class=""><h5>Create an Idea</h5></label>
     <%= form_for :idea, url: "" do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title, id: "new-title" %>
