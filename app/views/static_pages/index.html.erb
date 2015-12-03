@@ -1,15 +1,12 @@
 <div class="site-color center">
-  <h1 class="title">Box of Ideas</h1>
-
+  <h2 class="title">The World's Most Luxurious Box of Ideas</h2>
 
   <div class="container col m4 well" id="new-idea">
-    <form id="ideas-search" action="" class="styled" method="post">
-      <fieldset>
-        <label for="search" class=""><h5>Search Ideas</h5></label>
-        <input type="text" class="text-input" id="filter" value="" />
-        <span id="filter-count"></span>
-      </fieldset>
-    </form>
+    <fieldset id="ideas-search">
+      <label for="search" class=""><h5>Search Ideas</h5></label>
+      <input type="text" class="text-input" id="filter" value="" />
+      <span id="filter-count"></span>
+    </fieldset>
     <br>
     <label class=""><h5>Create an Idea</h5></label>
     <%= form_for :idea, url: "" do |f| %>
