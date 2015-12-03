@@ -14,18 +14,18 @@ def parsed_body
 end
 
 def idea1
-  Idea.create(title: "title one",
+  @i1 ||= Idea.create(title: "title one",
                body: "body one")
 end
 
 def idea2
-  Idea.create(title: "title two",
+  @i2 ||= Idea.create(title: "title two",
                body: "body two",
             quality: 1)
 end
 
 def idea3
-  Idea.create(title: "title three",
+  @i3 ||= Idea.create(title: "title three",
                body: "body three",
             quality: 2)
 end

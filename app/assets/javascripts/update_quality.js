@@ -1,27 +1,23 @@
 function changeQuality(){
-  $(".up-button").on('click', function(){
+  $("#wrapper").on('click', ".up-button", function(){
     var ideaUpButton = $(this);
-    var ideaId = ideaUpButton.parent().attr("id");
-
+    var ideaId = ideaUpButton.parent().parent().attr("id");
     var updateQualityParams = {
       idea: {
         quality: 1
       }
     };
-
     updateQuality(ideaId, updateQualityParams);
   });
 
-  $(".down-button").on('click', function(){
+  $("#wrapper").on('click', ".down-button", function(){
     var ideaDownButton = $(this);
-    var ideaId = ideaDownButton.parent().attr("id");
-
+    var ideaId = ideaDownButton.parent().parent().attr("id");
     var updateQualityParams = {
       idea: {
         quality: -1
       }
     };
-
     updateQuality(ideaId, updateQualityParams);
   });
 }
@@ -32,7 +28,7 @@ function updateQuality(id, updateParams){
     url:  'api/v1/ideas/' + id,
     data: updateParams,
     success: function(response) {
-      updateQualityLabel(response);
+      updateIdeaAttributes(response);
     },
     error: function(error) {
       console.log(error.responseText)
@@ -40,9 +36,17 @@ function updateQuality(id, updateParams){
   });
 }
 
-function updateQualityLabel(response){
-  var id = response.id
-  var new_quality = response.quality
-  var new_quality_element = $('#' + id).children().first().next()
-  new_quality_element.replaceWith('<h4> (' + new_quality + ')</h4>')
+function updateIdeaAttributes(idea){
+  var id = idea.id
+  var idea_element = $('#' + id).children()
+
+  updateTitleText(idea, idea_element);
+  updateQualityText(idea, idea_element);
+  updateBodyText(idea, idea_element);
+}
+
+function updateQualityText(idea, idea_element){
+  var new_quality = idea.quality
+  var idea_quality_element = idea_element[1]
+  $(idea_quality_element).replaceWith('<h5> (' + new_quality + ')</h5>')
 }
