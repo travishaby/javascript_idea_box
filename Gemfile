@@ -11,6 +11,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "materialize-sass"
 gem "responders"
 gem "ffaker"
+gem "rails_12factor"
 
 group :development, :test do
   gem "pry"

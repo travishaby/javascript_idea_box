@@ -2,11 +2,12 @@ function allIdeas(){
   $.getJSON('/api/v1/ideas')
     .then(function(ideas){
       ideas = ideas.sort(function(a, b){
-        a.updated_at > b.updated_at
-      }).reverse();
+        a.created_at > b.created_at
+      });
       ideas.forEach(function(idea){
         renderIdea(idea);
       })
+      filterIdeas();
     })
     .fail(function(){ console.log("api request failed") });
 };
