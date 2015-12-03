@@ -1,21 +1,19 @@
 function changeQuality(){
-  $("#wrapper").on('click', ".up-button", function(){
-    var ideaUpButton = $(this);
-    var ideaId = ideaUpButton.parent().parent().attr("id");
-    var updateQualityParams = {
-      idea: {
-        quality: 1
-      }
-    };
-    updateQuality(ideaId, updateQualityParams);
-  });
+  buttonDirection("up");
+  buttonDirection("down");
+}
 
-  $("#wrapper").on('click', ".down-button", function(){
+function buttonDirection(direction){
+  $("#wrapper").on('click', '.' + direction + '-button', function(){
     var ideaDownButton = $(this);
     var ideaId = ideaDownButton.parent().parent().attr("id");
+    var directionToInt = {
+      'down': -1,
+        'up': 1
+    }
     var updateQualityParams = {
       idea: {
-        quality: -1
+        quality: directionToInt[direction]
       }
     };
     updateQuality(ideaId, updateQualityParams);
@@ -39,7 +37,6 @@ function updateQuality(id, updateParams){
 function updateIdeaAttributes(idea){
   var id = idea.id
   var idea_element = $('#' + id).children()
-
   updateTitleText(idea, idea_element);
   updateQualityText(idea, idea_element);
   updateBodyText(idea, idea_element);
