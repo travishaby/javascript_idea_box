@@ -3,10 +3,11 @@ function allIdeas(){
     .then(function(ideas){
       ideas = ideas.sort(function(a, b){
         a.created_at > b.created_at
-      }).reverse();
+      });
       ideas.forEach(function(idea){
         renderIdea(idea);
       })
+      filterIdeas();
     })
     .fail(function(){ console.log("api request failed") });
 };
