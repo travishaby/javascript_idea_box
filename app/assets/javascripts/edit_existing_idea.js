@@ -34,6 +34,8 @@ function updateTitleText(idea, idea_element){
 
 function updateBodyText(idea, idea_element){
   var new_body = idea.body
-  var idea_body_element = $(idea_element)[0]
-  $(idea_body_element).replaceWith('<h5>' + new_body + '</h5>')
+  var idea_body_element = $(idea_element)[2]
+  $(idea_body_element).replaceWith('<h5>'
+    + truncateBody(new_body, 100)
+    + '</h5>')
 }
