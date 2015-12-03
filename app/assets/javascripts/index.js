@@ -2,7 +2,7 @@ function allIdeas(){
   $.getJSON('/api/v1/ideas')
     .then(function(ideas){
       ideas = ideas.sort(function(a, b){
-        a.updated_at > b.updated_at
+        a.created_at > b.created_at
       }).reverse();
       ideas.forEach(function(idea){
         renderIdea(idea);
